@@ -19,7 +19,6 @@ void callbackDispatcher() {
     final List<dynamic> args = call.arguments;
     final Function callback = PluginUtilities.getCallbackFromHandle(
         CallbackHandle.fromRawHandle(args[0]))!;
-    assert(callback != null);
     final List<String>? triggeringGeofences = args[1].cast<String>();
     final List<double> locationList = <double>[];
     // 0.0 becomes 0 somewhere during the method call, resulting in wrong
